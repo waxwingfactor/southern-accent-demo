@@ -51,9 +51,6 @@
   ol.steps li::before { content:counter(s); position:absolute; left:18px; top:16px; width:34px; height:34px; border-radius:50%; background:var(--blue); color:#fff; font:400 17px/34px "Archivo Black", sans-serif; text-align:center; }
   ol.steps b { display:block; color:var(--navy); }
   ol.steps span { font-size:15px; color:var(--muted); }
-  .notes { background:#fff; border:2px solid var(--blue); border-radius:20px; padding:8px 24px; }
-  .notes ul { margin:12px 0; padding-left:20px; }
-  .notes li { margin:8px 0; }
   footer { padding:24px 0 56px; color:var(--muted); font-size:14px; }
   @media (max-width:760px) { .pair { grid-template-columns:1fr; } header { padding-top:36px; } .toggle button { padding:10px 14px; } }
 </style>
@@ -104,18 +101,6 @@
     <li><b>Lip-sync the video</b><span>Upload the original video and the new audio to sync.so (lipsync-2-pro). The mouth is redrawn to match the new speech.</span></li>
   </ol>
 </section>
-
-<section class="wrap" aria-label="Good to know">
-  <h2>Good to know</h2>
-  <div class="notes"><ul>
-    <li><b>It's a re-performance, not a filter.</b> The words stay the same, but the timing and emphasis are regenerated in the new accent. Give each take a quick listen and keep the best one.</li>
-    <li><b>The voice stays yours.</b> An automatic speaker-match check scored the after audio at 0.91 against my original. Different people typically score 0.5 to 0.75.</li>
-    <li><b>Lip-sync quality matters.</b> The standard model softened my mustache and lips. The pro model keeps that detail.</li>
-    <li><b>Running cost:</b> ElevenLabs Starter is about $6 a month, and lip-sync is about $5 per minute of video. This whole demo, including test takes, used under 10% of one month's ElevenLabs credits.</li>
-    <li><b>Works the other way too.</b> A woman's voice gets a woman's Southern accent, and the accent can be dialed from subtle to strong.</li>
-  </ul></div>
-</section>
-
 <footer class="wrap">My own face and voice, used with my consent. Tools: ElevenLabs (Speech to Text, Instant Voice Clone, Voice Remix, Eleven v4), sync.so lipsync-2-pro (run via fal.ai).</footer>
 
 <script>
