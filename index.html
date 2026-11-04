@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Same video, Southern accent · before / after</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --yellow:#FEF198; --blue:#0048F0; --navy:#0E1E40; --sky:#C0D2F0; --mint:#80D4AC; --berry:#E5484D; --muted:#4A5675; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--yellow); color:var(--navy); font:17px/1.6 "Plus Jakarta Sans", system-ui, sans-serif; }
+  .wrap { max-width:1080px; margin:0 auto; padding-left:24px; padding-right:24px; }
+  header { padding:56px 0 8px; }
+  h1, h2 { font-family:"Archivo Black", Impact, sans-serif; color:var(--blue); text-transform:uppercase; letter-spacing:-.01em; margin:0; }
+  h1 { font-size:clamp(34px,5.4vw,60px); line-height:1.02; }
+  h2 { font-size:clamp(24px,3vw,32px); line-height:1.1; margin-bottom:14px; }
+  .lede { max-width:760px; font-size:19px; margin:18px 0 0; }
+  section { padding:36px 0; }
+  .card { background:#fff; border:2px solid var(--blue); border-radius:24px; overflow:hidden; box-shadow:0 18px 40px -22px rgba(14,30,64,.45); }
+
+  /* A/B player */
+  .stage { position:relative; aspect-ratio:16/9; background:var(--navy); cursor:pointer; }
+  .stage video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:opacity .12s; }
+  .badge { position:absolute; top:16px; left:16px; padding:6px 14px; border-radius:999px; font:700 14px/1.4 "Plus Jakarta Sans", sans-serif; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:rgba(14,30,64,.78); pointer-events:none; }
+  .badge.after { background:var(--blue); }
+  .bigplay { position:absolute; inset:0; margin:auto; width:92px; height:92px; border-radius:50%; border:0; background:var(--blue); color:#fff; box-shadow:0 10px 30px rgba(0,0,0,.35); display:grid; place-items:center; cursor:pointer; }
+  .bigplay svg { width:34px; height:34px; margin-left:6px; }
+  .bigplay[hidden] { display:none; }
+  .bar { display:flex; flex-wrap:wrap; align-items:center; gap:14px 18px; padding:16px 20px; }
+  .ctl { width:46px; height:46px; flex:none; border-radius:50%; border:2px solid var(--blue); background:#fff; color:var(--blue); display:grid; place-items:center; cursor:pointer; }
+  .ctl svg { width:18px; height:18px; }
+  .seek { flex:1 1 200px; display:flex; align-items:center; gap:12px; font:600 14px/1 "Plus Jakarta Sans", sans-serif; color:var(--muted); font-variant-numeric:tabular-nums; }
+  input[type=range] { flex:1; accent-color:var(--blue); }
+  .toggle { display:inline-flex; padding:4px; border-radius:999px; background:#EEF2FB; border:2px solid var(--sky); }
+  .toggle button { border:0; border-radius:999px; padding:10px 20px; font:700 15px/1 "Plus Jakarta Sans", sans-serif; color:var(--navy); background:transparent; cursor:pointer; white-space:nowrap; }
+  .toggle button[aria-pressed=true] { background:var(--blue); color:#fff; }
+  .hint { margin:12px 4px 0; color:var(--muted); font-size:15px; }
+  kbd { font:600 13px/1 ui-monospace, monospace; border:1px solid #b9c3da; border-bottom-width:2px; border-radius:6px; padding:2px 6px; background:#fff; }
+
+  .pair { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .pair figure { margin:0; }
+  .pair video { display:block; width:100%; aspect-ratio:16/9; background:var(--navy); }
+  .pair figcaption { padding:14px 18px 16px; }
+  .pair figcaption b { color:var(--blue); text-transform:uppercase; letter-spacing:.05em; font-size:14px; }
+  .pair figcaption p { margin:4px 0 0; font-size:15px; color:var(--muted); }
+
+  ol.steps { list-style:none; counter-reset:s; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+  ol.steps li { counter-increment:s; background:#fff; border:2px solid var(--blue); border-radius:20px; padding:18px 20px 18px 66px; position:relative; }
+  ol.steps li::before { content:counter(s); position:absolute; left:18px; top:16px; width:34px; height:34px; border-radius:50%; background:var(--blue); color:#fff; font:400 17px/34px "Archivo Black", sans-serif; text-align:center; }
+  ol.steps b { display:block; color:var(--navy); }
+  ol.steps span { font-size:15px; color:var(--muted); }
+  .notes { background:#fff; border:2px solid var(--blue); border-radius:20px; padding:8px 24px; }
+  .notes ul { margin:12px 0; padding-left:20px; }
+  .notes li { margin:8px 0; }
+  footer { padding:24px 0 56px; color:var(--muted); font-size:14px; }
+  @media (max-width:760px) { .pair { grid-template-columns:1fr; } header { padding-top:36px; } .toggle button { padding:10px 14px; } }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1>Same video.<br>Southern accent.</h1>
+  <p class="lede">This is my own talking-head recording. I'm a Ukrainian-born English speaker. The after version keeps my face, my words and my voice, but now I sound like I grew up in the South. Nothing was re-filmed. Flip the switch mid-sentence to compare.</p>
+</header>
+
+<section class="wrap" aria-label="Before and after player">
+  <div class="card">
+    <div class="stage" id="stage">
+      <video id="vb" src="media/before.mp4" poster="media/poster.jpg" playsinline preload="auto"></video>
+      <video id="va" src="media/after.mp4" poster="media/poster.jpg" playsinline preload="auto" muted style="opacity:0"></video>
+      <span class="badge" id="badge">Before</span>
+      <button class="bigplay" id="bigplay" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l15 8-15 8z"/></svg></button>
+    </div>
+    <div class="bar">
+      <button class="ctl" id="play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l15 8-15 8z"/></svg></button>
+      <div class="seek"><span id="cur">0:00</span><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek"><span id="dur">0:58</span></div>
+      <div class="toggle" role="group" aria-label="Accent">
+        <button id="tb" aria-pressed="true">Before · my accent</button>
+        <button id="ta" aria-pressed="false">After · Southern</button>
+      </div>
+    </div>
+  </div>
+  <p class="hint">Both versions play in lockstep, so switching keeps your place. Keyboard: <kbd>space</kbd> to play or pause, <kbd>B</kbd> or <kbd>A</kbd> to switch.</p>
+</section>
+
+<section class="wrap" aria-label="Separate videos">
+  <h2>Or watch them separately</h2>
+  <div class="pair">
+    <figure class="card"><video src="media/before.mp4" poster="media/poster.jpg" controls playsinline preload="metadata"></video>
+      <figcaption><b>Before</b><p>The original recording, untouched apart from volume leveling.</p></figcaption></figure>
+    <figure class="card"><video src="media/after.mp4" poster="media/poster.jpg" controls playsinline preload="metadata"></video>
+      <figcaption><b>After</b><p>The same words in my cloned voice with a Southern accent. The mouth is re-animated to match.</p></figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" aria-label="How it works">
+  <h2>How it's done, and what I'd teach you</h2>
+  <ol class="steps">
+    <li><b>Transcribe the video</b><span>ElevenLabs Speech to Text gives the exact words with timings.</span></li>
+    <li><b>Clone your voice</b><span>Instant Voice Clone from about a minute of your normal talking. You do this once and reuse it for every video.</span></li>
+    <li><b>Remix the clone into a Southern accent</b><span>ElevenLabs Voice Remix. You describe the accent you want, from a light Texas lilt to a full drawl, listen to the options and keep the one that still sounds like you.</span></li>
+    <li><b>Re-voice the script</b><span>Generate the same words in the Southern voice. Re-generate any sentence that's off. Names are the usual culprit.</span></li>
+    <li><b>Lip-sync the video</b><span>Upload the original video and the new audio to sync.so (lipsync-2-pro). The mouth is redrawn to match the new speech.</span></li>
+  </ol>
+</section>
+
+<section class="wrap" aria-label="Good to know">
+  <h2>Good to know</h2>
+  <div class="notes"><ul>
+    <li><b>It's a re-performance, not a filter.</b> The words stay the same, but the timing and emphasis are regenerated in the new accent. Give each take a quick listen and keep the best one.</li>
+    <li><b>The voice stays yours.</b> An automatic speaker-match check scored the after audio at 0.91 against my original. Different people typically score 0.5 to 0.75.</li>
+    <li><b>Lip-sync quality matters.</b> The standard model softened my mustache and lips. The pro model keeps that detail.</li>
+    <li><b>Running cost:</b> ElevenLabs Starter is about $6 a month, and lip-sync is about $5 per minute of video. This whole demo, including test takes, used under 10% of one month's ElevenLabs credits.</li>
+    <li><b>Works the other way too.</b> A woman's voice gets a woman's Southern accent, and the accent can be dialed from subtle to strong.</li>
+  </ul></div>
+</section>
+
+<footer class="wrap">My own face and voice, used with my consent. Tools: ElevenLabs (Speech to Text, Instant Voice Clone, Voice Remix, Eleven v4), sync.so lipsync-2-pro (run via fal.ai).</footer>
+
+<script>
+(() => {
+  const vb = document.getElementById('vb'), va = document.getElementById('va');
+  const stage = document.getElementById('stage'), badge = document.getElementById('badge');
+  const big = document.getElementById('bigplay'), play = document.getElementById('play');
+  const seek = document.getElementById('seek'), cur = document.getElementById('cur'), dur = document.getElementById('dur');
+  const tb = document.getElementById('tb'), ta = document.getElementById('ta');
+  const PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l15 8-15 8z"/></svg>';
+  const PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>';
+  let after = false, seeking = false;
+  const shown = () => after ? va : vb, hidden = () => after ? vb : va;
+  const fmt = t => { t = Math.max(0, Math.floor(t || 0)); return Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0'); };
+
+  function setMode(a) {
+    const t = shown().currentTime;
+    after = a;
+    hidden().currentTime = t;  // keep the hidden one exactly in step before revealing it
+    va.style.opacity = a ? 1 : 0; vb.style.opacity = a ? 0 : 1;
+    va.muted = !a; vb.muted = a;
+    tb.setAttribute('aria-pressed', !a); ta.setAttribute('aria-pressed', a);
+    badge.textContent = a ? 'After · Southern' : 'Before';
+    badge.classList.toggle('after', a);
+  }
+  function paint() {
+    const p = !shown().paused;
+    play.innerHTML = p ? PAUSE : PLAY; play.setAttribute('aria-label', p ? 'Pause' : 'Play');
+    big.hidden = p;
+  }
+  function toggle() {
+    if (shown().paused) {
+      if (shown().ended || shown().currentTime >= (shown().duration || 1e9) - 0.05) { vb.currentTime = 0; va.currentTime = 0; }
+      hidden().currentTime = shown().currentTime;
+      Promise.all([vb.play(), va.play()]).catch(() => {}).finally(paint);
+    } else { vb.pause(); va.pause(); paint(); }
+  }
+  [vb, va].forEach(v => {
+    v.addEventListener('timeupdate', () => {
+      if (v !== shown()) return;
+      const h = hidden();
+      if (!v.paused && Math.abs(h.currentTime - v.currentTime) > 0.15) h.currentTime = v.currentTime;
+      if (!seeking && v.duration) seek.value = Math.round(v.currentTime / v.duration * 1000);
+      cur.textContent = fmt(v.currentTime);
+    });
+    v.addEventListener('loadedmetadata', () => { if (v === vb) dur.textContent = fmt(v.duration); });
+    v.addEventListener('ended', () => { vb.pause(); va.pause(); paint(); });
+  });
+  seek.addEventListener('input', () => {
+    seeking = true;
+    const t = seek.value / 1000 * (vb.duration || 0);
+    vb.currentTime = t; va.currentTime = t; cur.textContent = fmt(t);
+  });
+  seek.addEventListener('change', () => { seeking = false; });
+  play.addEventListener('click', toggle);
+  big.addEventListener('click', e => { e.stopPropagation(); toggle(); });
+  stage.addEventListener('click', toggle);
+  tb.addEventListener('click', () => setMode(false));
+  ta.addEventListener('click', () => setMode(true));
+  document.addEventListener('keydown', e => {
+    if (e.target.closest('input, video[controls]')) return;
+    if (e.code === 'Space') { e.preventDefault(); toggle(); }
+    else if (e.key === 'a' || e.key === 'A') setMode(true);
+    else if (e.key === 'b' || e.key === 'B') setMode(false);
+  });
+  // the separate players pause the A/B player (and each other) so two soundtracks never overlap
+  document.querySelectorAll('.pair video').forEach(v => v.addEventListener('play', () => {
+    vb.pause(); va.pause(); paint();
+    document.querySelectorAll('.pair video').forEach(o => { if (o !== v) o.pause(); });
+  }));
+  [vb, va].forEach(v => v.addEventListener('play', () => document.querySelectorAll('.pair video').forEach(o => o.pause())));
+})();
+</script>
+</body>
+</html>
